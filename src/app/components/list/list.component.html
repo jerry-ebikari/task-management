@@ -1,0 +1,33 @@
+<div
+    class="list-group rounded-bottom"
+    [ngClass]="'bg-'+backgroundColor"
+    cdkDropList
+    [cdkDropListData]="items"
+    (cdkDropListDropped)="drop($event)"
+>
+    <h2 class="text-center text-white rounded-top">{{title}}</h2>
+    <div 
+        class="list-item list-group-item d-flex justify-content-between"
+        *ngFor="let item of items; let i = index;" 
+        cdkDrag
+    >
+        <textarea class="item-input" type="text" rows="1" [value]="item" readonly #listItem></textarea>
+        <div class="buttons">
+            <button (click)="edit(editBtn, savebtn, listItem)" class="text-primary" #editBtn>
+                <i class="bi bi-pencil"></i>
+            </button>
+            <button
+                style="display:none"
+                (click)="save(i, savebtn, editBtn, listItem)"
+                class="text-success"
+                #savebtn
+            >
+                Save
+            </button>
+            <button (click)="del(i)" class="text-danger ps-2">
+                <i class="bi bi-trash"></i>
+                <!-- <i class="bi bi-x-lg"></i> -->
+            </button>
+        </div>
+    </div>
+</div>

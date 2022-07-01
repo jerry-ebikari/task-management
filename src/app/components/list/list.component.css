@@ -1,0 +1,16 @@
+.list-item textarea,
+.list-item button {
+    all: unset;
+}
+
+.list-item {
+    cursor: move;
+}
+
+.list-item button {
+    cursor: pointer;
+}
+
+.list-item textarea {
+    flex: 1;
+}

@@ -1,0 +1,12 @@
+#add-task-area {
+    max-width: 768px;
+}
+
+#help-text {
+    display: none;
+}
+
+#help-btn {
+    bottom: 1rem;
+    right: 1rem;
+}
